@@ -1,9 +1,9 @@
-const express = require('express');
+/*const express = require('express');
 const app = express();
-const server = require('http').createServer(app);
+const server = require('http').createServer(app);*/
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({server:server});
+const wss = new WebSocket.Server({port:8082});
 
 wss.on('connection',ws=>{
     console.log('New client connected!');
