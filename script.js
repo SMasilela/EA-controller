@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const numericInput = document.getElementById('numericInput');
     const resultSpan = document.getElementById('result');
 
-    const ws = new WebSocket('ws://localhost:8080');
+    const ws = new WebSocket('ws://localhost:8082');
     ws.addEventListener('open', ()=>{
         console.log('We are connected!');
     })
