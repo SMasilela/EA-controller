@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const numericInput = document.getElementById('numericInput');
     const resultSpan = document.getElementById('result');
 
-    const ws = new WebSocket('ws://localhost:8082');
+    const ws = new WebSocket('ws://localhost:8080');
     ws.addEventListener('open', ()=>{
         console.log('We are connected!');
     })
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     buyButton.addEventListener('click', function() {
         const inputValue = numericInput.value;
+	alert('BOUGHT!');
         /*if (!isNaN(inputValue)) {
             fetch(BASE_URL+"?type=cwrite&command="+inputValue+"_buy")
 			.then(res=>res.json())
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sellButton.addEventListener('click', function() {
         const inputValue = numericInput.value;
+	alert('SOLD!');
         /*if (!isNaN(inputValue)) {
             fetch(BASE_URL+"?type=cwrite&command="+inputValue+"_sell","content-type:application/json")
 			.then(res=>res.json())
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     closeAllButton.addEventListener('click', function() {
         const inputValue = numericInput.value;
+	alert('CLOSED ALL!');
         /*if (!isNaN(inputValue)) {
             fetch(BASE_URL+"?type=cwrite&command="+inputValue+"_closeall","content-type:application/json")
 			.then(res=>res.json())
