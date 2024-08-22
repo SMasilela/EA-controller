@@ -29,4 +29,3 @@ const io = require('socket.io-client')
     closeAllButton.addEventListener('click', function() {
         const inputValue = numericInput.value;
     });
-});
