@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    const io = console.require('socket.io-client')
+    const io = window.require('socket.io-client')
     
 
     const socket = io('http://localhost:3000')
