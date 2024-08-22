@@ -1,14 +1,5 @@
-/*const express = require('express');
-const app = express();
-const server = require('http').createServer(app);*/
-const WebSocket = require('ws');
+const io = require('socket.io')(3000);
 
-const wss = new WebSocket.Server({port:8082});
-
-wss.on('connection',ws=>{
-    console.log('New client connected!');
-    
-    ws.on('close', ()=>{
-        console.log('Client has disconnected!')
-    })
+io.on('connection', socket=>{
+    console.log('Client connected!');
 })
