@@ -1,14 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const BASE_URL = '';//'https://script.google.com/macros/s/AKfycbwl_2mjMQ9ciC4ZwwHFxkwIk89RCAiWq6hDDUzKfwIuBPxN6QPzT0pMyEyn7tfqj3j5uA/exec'
-    
+    import { io } from 'socket.io-client'
 
+    const socket = io('http://localhost:3000')
+    
     const buyButton = document.getElementById('buyButton');
     const sellButton = document.getElementById('sellButton');
     const closeAllButton = document.getElementById('closeAllButton');
     const numericInput = document.getElementById('numericInput');
     const resultSpan = document.getElementById('result');
 
-    const ws = new WebSocket('ws://localhost:8080');
+    const ws = new WebSocket('ws://localhost:8082');
     ws.addEventListener('open', ()=>{
         console.log('We are connected!');
     })
@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     buyButton.addEventListener('click', function() {
         const inputValue = numericInput.value;
-	alert('BOUGHT!');
         /*if (!isNaN(inputValue)) {
             fetch(BASE_URL+"?type=cwrite&command="+inputValue+"_buy")
 			.then(res=>res.json())
@@ -41,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sellButton.addEventListener('click', function() {
         const inputValue = numericInput.value;
-	alert('SOLD!');
         /*if (!isNaN(inputValue)) {
             fetch(BASE_URL+"?type=cwrite&command="+inputValue+"_sell","content-type:application/json")
 			.then(res=>res.json())
@@ -58,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     closeAllButton.addEventListener('click', function() {
         const inputValue = numericInput.value;
-	alert('CLOSED ALL!');
         /*if (!isNaN(inputValue)) {
             fetch(BASE_URL+"?type=cwrite&command="+inputValue+"_closeall","content-type:application/json")
 			.then(res=>res.json())
@@ -72,4 +69,4 @@ document.addEventListener('DOMContentLoaded', function() {
             updateResult(result);
         }*/
     });
-});
+
